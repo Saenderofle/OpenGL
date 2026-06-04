@@ -20,6 +20,10 @@ target_include_directories(glm INTERFACE external/glm)
 add_executable(Task_2_3_1
         src/Hw_2_3_1.cpp
         src/glad.c
+        src/Hw_2_4.cpp
+        src/Hw_2_4.h
+        src/Hw_2_5.cpp
+        src/Hw_2_5.h
 )
 target_include_directories(Task_2_3_1 PRIVATE include external/glm)
 target_link_libraries(Task_2_3_1 PRIVATE glfw glm)
@@ -34,3 +38,21 @@ add_executable(Task_2_3_2
 )
 target_include_directories(Task_2_3_2 PRIVATE include external/glm)
 target_link_libraries(Task_2_3_2 PRIVATE glfw glm)
+# =========================================================================
+# ЗАВДАННЯ 3: Інтерактивний прямокутник (Рух стрілочками + Миша)
+# =========================================================================
+add_executable(Task_Keyboard_Mouse
+        src/Hw_2_4.cpp
+        src/glad.c
+)
+target_include_directories(Task_Keyboard_Mouse PRIVATE include external/glm)
+target_link_libraries(Task_Keyboard_Mouse PRIVATE glfw glm)
+# =========================================================================
+# ЗАВДАННЯ 5: 3D куби з камерою, вибором через 1-2-3 та Stencil рамкою
+# =========================================================================
+add_executable(Task_3D_Cubes
+        src/Hw_2_5.cpp
+        src/glad.c
+)
+target_include_directories(Task_3D_Cubes PRIVATE include external/glm)
+target_link_libraries(Task_3D_Cubes PRIVATE glfw glm)
