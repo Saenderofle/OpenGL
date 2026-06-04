@@ -294,8 +294,7 @@ int main() {
             // Обробка W,A,S,D
             processCameraInput(window, (float)deltaTime);
 
-            // --- КРИТИЧНЕ ВИПРАВЛЕННЯ БАГУ ЗМАЗУВАННЯ ---
-            // Скидаємо маску перед очищенням кадру, щоб glClear стер абсолютно все полотно
+
             glStencilMask(0xFF);
 
             glClearColor(0.1f, 0.1f, 0.15f, 1.0f);
@@ -344,7 +343,6 @@ int main() {
 
                     glUseProgram(outlineProgram);
 
-                    // Матриця моделі для рамки (збільшена на 5%)
                     glm::mat4 outlineModel = glm::mat4(1.0f);
                     outlineModel = glm::translate(outlineModel, cubePositions[i]);
                     outlineModel = glm::scale(outlineModel, cubeScales[i] * 1.05f);
@@ -356,7 +354,7 @@ int main() {
 
                     glDrawArrays(GL_TRIANGLES, 0, 36);
 
-                    // Відновлюємо налаштування для наступних ітерацій кадру
+                    
                     glStencilMask(0xFF);
                     glEnable(GL_DEPTH_TEST);
                 }
